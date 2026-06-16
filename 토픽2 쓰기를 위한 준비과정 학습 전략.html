@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOPIK II 쓰기 영역 완전 정복</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100" style="background-color: #f0f4f8;">
+    <!-- Palette: Brilliant Blues (#005F73, #0A9396, #94D2BD, #E9D8A6, #EE9B00) -->
+    <div class="container mx-auto p-4 md:p-8">
+        
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-black mb-2" style="color: #005F73;">TOPIK II 쓰기 영역 완전 정복</h1>
+            <p class="text-lg md:text-xl text-gray-600">데이터 기반 전략으로 쓰기 점수를 극복하는 방법</p>
+        </header>
+
+        <main>
+            <section id="challenge" class="mb-16">
+                <h2 class="text-3xl font-bold text-center mb-8" style="color: #0A9396;">1. 도전: 왜 쓰기는 어려운가?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-bold mb-4 text-center" style="color: #005F73;">영역별 평균 점수 비교</h3>
+                        <p class="text-gray-700 mb-4 text-center">다수의 연구에서 TOPIK 쓰기 영역은 듣기, 읽기 영역에 비해 학습자들이 가장 낮은 평균 점수를 기록하는 것으로 나타났습니다. 이는 쓰기 능력이 복합적인 언어 능력을 요구하기 때문입니다.</p>
+                        <div class="chart-container">
+                            <canvas id="scoreComparisonChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <h3 class="text-xl font-bold mb-4 text-center" style="color: #005F73;">학습자의 3가지 주요 어려움</h3>
+                        <div class="bg-white rounded-lg shadow-md p-6 flex items-start">
+                            <span class="text-4xl mr-4">🧠</span>
+                            <div>
+                                <h4 class="font-bold text-lg" style="color: #CA6702;">모국어 간섭</h4>
+                                <p class="text-gray-600">모국어의 글쓰기 방식(예: 결론을 마지막에 제시)이 한국어의 직선적 논리 구조와 충돌하여 어색한 문장을 만듭니다.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-md p-6 flex items-start">
+                             <span class="text-4xl mr-4">📚</span>
+                            <div>
+                                <h4 class="font-bold text-lg" style="color: #CA6702;">언어 지식의 한계</h4>
+                                <p class="text-gray-600">어휘량 부족, 부정확한 문법(특히 조사, 어미) 사용은 의미 전달을 방해하는 가장 큰 요인입니다.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-md p-6 flex items-start">
+                            <span class="text-4xl mr-4">✍️</span>
+                            <div>
+                                <h4 class="font-bold text-lg" style="color: #CA6702;">내용 구성 능력 부족</h4>
+                                <p class="text-gray-600">주제에 대한 배경지식이 부족하거나, 아이디어를 서론-본론-결론 구조로 논리적으로 조직하는 훈련이 부족합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="foundation" class="mb-16">
+                <h2 class="text-3xl font-bold text-center mb-8" style="color: #0A9396;">2. 기반 다지기: 성공적인 글쓰기의 핵심 원리</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                     <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-bold mb-4 text-center" style="color: #005F73;">4단계 과정 중심 접근법</h3>
+                        <p class="text-gray-700 mb-6 text-center">좋은 글은 한 번에 완성되지 않습니다. 계획, 초고, 수정, 편집의 순환적인 과정을 통해 글의 완성도를 높여야 합니다.</p>
+                        <div class="flex flex-col items-center space-y-2">
+                             <div class="w-48 text-center p-3 rounded-lg shadow" style="background-color: #94D2BD; color: #005F73;">1. 계획하기 (Pre-writing)</div>
+                             <div class="text-2xl font-bold" style="color: #0A9396;">↓</div>
+                             <div class="w-48 text-center p-3 rounded-lg shadow" style="background-color: #E9D8A6; color: #CA6702;">2. 초고 작성 (Drafting)</div>
+                             <div class="text-2xl font-bold" style="color: #0A9396;">↓</div>
+                             <div class="w-48 text-center p-3 rounded-lg shadow" style="background-color: #EE9B00; color: #fff;">3. 수정하기 (Revising)</div>
+                             <div class="text-2xl font-bold" style="color: #0A9396;">↓</div>
+                             <div class="w-48 text-center p-3 rounded-lg shadow" style="background-color: #CA6702; color: #fff;">4. 편집하기 (Editing)</div>
+                             <div class="text-lg font-bold mt-2" style="color: #0A9396;">(필요시 윗 단계로 ↺)</div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-bold mb-4 text-center" style="color: #005F73;">글쓰기에 필요한 4가지 지식</h3>
+                        <p class="text-gray-700 mb-4 text-center">고득점을 위해서는 네 가지 지식을 균형 있게 갖추는 것이 중요합니다. 어느 한쪽이라도 부족하면 좋은 글을 쓰기 어렵습니다.</p>
+                        <div class="chart-container">
+                            <canvas id="knowledgeRadarChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="strategy" class="mb-16">
+                <h2 class="text-3xl font-bold text-center mb-8" style="color: #0A9396;">3. 문항별 핵심 공략법</h2>
+                
+                <div class="bg-white rounded-lg shadow-md p-6 mb-8 md:col-span-2">
+                     <h3 class="text-2xl font-bold mb-4" style="color: #005F73;">51 & 52번: 문맥 기반 문장 완성</h3>
+                     <p class="text-gray-700 mb-4">51번(실용문)과 52번(설명문)은 글의 전체적인 맥락과 톤을 파악하는 것이 핵심입니다. 특히 문장의 종결어미를 일관성 있게 사용해야 합니다.</p>
+                     <div class="flex justify-around items-center bg-gray-50 p-4 rounded-lg">
+                         <div>
+                             <p class="font-bold">공식적 상황 (교수님께)</p>
+                             <p class="text-lg" style="color: #0A9396;">"~ 주실 수 있으십니까?"</p>
+                         </div>
+                          <div class="text-2xl font-bold" style="color: #EE9B00;">vs</div>
+                         <div>
+                             <p class="font-bold">비공식적 상황 (친구에게)</p>
+                             <p class="text-lg" style="color: #CA6702;">"~ 보내 줄 수 있어?"</p>
+                         </div>
+                     </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-2xl font-bold mb-4" style="color: #005F73;">53번: 자료 기반 설명문 쓰기</h3>
+                        <p class="text-gray-700 mb-4">53번은 정해진 구조에 맞춰 쓰는 것이 가장 효과적입니다. 아래의 '텍스트 구조 표지'를 암기하고 활용하여 논리적인 글을 완성하세요.</p>
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr>
+                                    <th class="border-b-2 p-2" style="border-color: #0A9396; color: #005F73;">단계</th>
+                                    <th class="border-b-2 p-2" style="border-color: #0A9396; color: #005F73;">필수 표현 예시</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-blue-50">
+                                    <td class="border-b p-2 font-bold" style="border-color: #94D2BD;">도입</td>
+                                    <td class="border-b p-2" style="border-color: #94D2BD;">~에 대한 조사 결과는 다음과 같다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="border-b p-2 font-bold" style="border-color: #94D2BD;">전개</td>
+                                    <td class="border-b p-2" style="border-color: #94D2BD;">A는 ~인 반면, B는 ~이다 / ~의 원인은 ~기 때문이다.</td>
+                                </tr>
+                                <tr class="bg-blue-50">
+                                    <td class="border-b p-2 font-bold" style="border-color: #94D2BD;">마무리</td>
+                                    <td class="border-b p-2" style="border-color: #94D2BD;">이를 통해 ~다는 것을 알 수 있다 / ~할 것으로 전망된다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-2xl font-bold mb-4" style="color: #005F73;">54번: 논리적 주장 펼치기</h3>
+                        <p class="text-gray-700 mb-4">고득점의 핵심은 접속 표현을 '많이'가 아닌 '정확하게' 사용하는 것입니다. 학습자는 원어민보다 접속 표현을 과도하게 사용하는 경향이 있습니다.</p>
+                        <div class="chart-container h-64">
+                             <canvas id="connectorUsageChart"></canvas>
+                        </div>
+                        <p class="text-center text-sm text-gray-600 mt-2">동일 어절 수 기준 접속 표현 사용 비율</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="training" class="mb-16">
+                 <h2 class="text-3xl font-bold text-center mb-8" style="color: #0A9396;">4. 실력 향상을 위한 통합 훈련 전략</h2>
+                <div class="bg-white rounded-lg shadow-md p-6 md:col-span-2">
+                    <p class="text-gray-700 mb-6 text-center text-lg">이론 학습을 실전 능력으로 바꾸기 위해서는 '분석 → 적용 → 교정'의 순환적 훈련이 필수적입니다.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                        <div class="p-4 rounded-lg" style="background-color: #E9D8A6;">
+                            <div class="text-5xl mb-2">🔎</div>
+                            <h4 class="font-bold text-xl" style="color: #CA6702;">분석 (입력)</h4>
+                            <p>모범 답안을 읽으며 글의 구조와 핵심 표현을 분석합니다.</p>
+                        </div>
+                        <div class="p-4 rounded-lg" style="background-color: #94D2BD;">
+                            <div class="text-5xl mb-2">📝</div>
+                            <h4 class="font-bold text-xl" style="color: #005F73;">적용 (출력)</h4>
+                            <p>직접 글을 써보고 동료나 교사에게 피드백을 받습니다.</p>
+                        </div>
+                        <div class="p-4 rounded-lg" style="background-color: #EE9B00;">
+                            <div class="text-5xl mb-2">🔄</div>
+                            <h4 class="font-bold text-xl" style="color: #fff;">교정 (재입력)</h4>
+                            <p>피드백을 바탕으로 자신의 글을 다시 써보며 약점을 보완합니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="text-center pt-8 border-t" style="border-color: #94D2BD;">
+            <p class="text-gray-600">이 인포그래픽은 TOPIK 쓰기 영역 정복을 위한 학습 전략 보고서를 기반으로 제작되었습니다.</p>
+            <p class="text-sm text-gray-500 mt-2">전략적 접근과 꾸준한 훈련으로 목표 점수를 달성하세요!</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const brilliantBlues = {
+            darkTeal: '#005F73',
+            teal: '#0A9396',
+            lightTeal: '#94D2BD',
+            sand: '#E9D8A6',
+            orange: '#EE9B00',
+            darkOrange: '#CA6702',
+            redOrange: '#BB3E03'
+        };
+
+        const defaultTooltipCallback = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                              return label.join(' ');
+                            } else {
+                              return label;
+                            }
+                        }
+                    }
+                }
+            }
+        };
+        
+        function wrapLabel(label, maxLength = 16) {
+            if (label.length <= maxLength) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + ' ' + word).trim().length > maxLength) {
+                    lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            }
+            if (currentLine) {
+                lines.push(currentLine.trim());
+            }
+            return lines;
+        }
+
+        new Chart(document.getElementById('scoreComparisonChart'), {
+            type: 'bar',
+            data: {
+                labels: ['듣기 (Listening)', '읽기 (Reading)', '쓰기 (Writing)'],
+                datasets: [{
+                    label: '영역별 평균 점수 (가상)',
+                    data: [85, 82, 65],
+                    backgroundColor: [brilliantBlues.lightTeal, brilliantBlues.teal, brilliantBlues.redOrange],
+                    borderColor: [brilliantBlues.lightTeal, brilliantBlues.teal, brilliantBlues.redOrange],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    ...defaultTooltipCallback.plugins,
+                    legend: {
+                        display: false
+                    },
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        max: 100
+                    }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('knowledgeRadarChart'), {
+            type: 'radar',
+            data: {
+                labels: [
+                    '내용 지식 (주제 이해)', 
+                    '맥락 지식 (목적/독자)', 
+                    wrapLabel('언어 체계 지식 (문법/어휘)'), 
+                    '과정 지식 (계획/수정)'
+                ],
+                datasets: [{
+                    label: '필요 지식 균형도',
+                    data: [8, 9, 7, 8],
+                    backgroundColor: 'rgba(148, 210, 189, 0.2)',
+                    borderColor: brilliantBlues.teal,
+                    pointBackgroundColor: brilliantBlues.teal,
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: brilliantBlues.teal
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    ...defaultTooltipCallback.plugins,
+                    legend: {
+                        position: 'top',
+                    },
+                },
+                scales: {
+                    r: {
+                        angleLines: { display: false },
+                        suggestedMin: 0,
+                        suggestedMax: 10,
+                        ticks: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+        
+        new Chart(document.getElementById('connectorUsageChart'), {
+            type: 'bar',
+            data: {
+                labels: ['교재 지문', '원어민', '학습자'],
+                datasets: [{
+                    label: '접속 표현 사용 비율',
+                    data: [1, 1.3, 2.3],
+                    backgroundColor: [brilliantBlues.lightTeal, brilliantBlues.teal, brilliantBlues.orange],
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                     ...defaultTooltipCallback.plugins,
+                    legend: {
+                        display: false,
+                    },
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
